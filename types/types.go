@@ -4,17 +4,17 @@ type DriverConfig struct {
 }
 
 type TaskConfig struct {
-	APIType            string            `codec:"api_type" json:"api_type"`
-	Cloud              CloudAPI          `codec:"cloud_api" json:"cloud_api"`
-	Docker             DockerAPI         `codec:"docker_api" json:"docker_api"`
-	Affinity           []string          `codec:"affinity" json:"affinity"`
-	CNS                []string          `codec:"cns" json:"cns"`
-	DeletionProtection bool              `codec:"deletion_protection" json:"deletion_protection"`
-	FWEnabled          bool              `codec:"fwenabled" json:"fwenabled"`
-	FWRules            map[string]string `codec:"fwrules" json:"fwrules"`
-	Package            Package           `codec:"package" json:"package"`
-	ExitStrategy       string            `codec:"exit_strategy" json:"exit_strategy"`
-	Tags               map[string]string `codec:"tags" json:"tags"`
+	APIType            string                 `codec:"api_type" json:"api_type"`
+	Cloud              CloudAPI               `codec:"cloud_api" json:"cloud_api"`
+	Docker             DockerAPI              `codec:"docker_api" json:"docker_api"`
+	Affinity           []string               `codec:"affinity" json:"affinity"`
+	CNS                []string               `codec:"cns" json:"cns"`
+	DeletionProtection bool                   `codec:"deletion_protection" json:"deletion_protection"`
+	FWEnabled          bool                   `codec:"fwenabled" json:"fwenabled"`
+	FWRules            map[string]string      `codec:"fwrules" json:"fwrules"`
+	Package            Package                `codec:"package" json:"package"`
+	ExitStrategy       string                 `codec:"exit_strategy" json:"exit_strategy"`
+	Tags               map[string]interface{} `codec:"tags" json:"tags"`
 }
 
 type CloudAPI struct {

@@ -20,10 +20,10 @@ import (
 	docker "github.com/fsouza/go-dockerclient"
 	hclog "github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/nomad/plugins/drivers"
-	triton "github.com/joyent/triton-go"
-	"github.com/joyent/triton-go/authentication"
-	"github.com/joyent/triton-go/compute"
-	"github.com/joyent/triton-go/network"
+	triton "github.com/joyent/triton-go/v2"
+	"github.com/joyent/triton-go/v2/authentication"
+	"github.com/joyent/triton-go/v2/compute"
+	"github.com/joyent/triton-go/v2/network"
 )
 
 type TritonTaskHandler struct {
@@ -160,7 +160,7 @@ func (tth *TritonTaskHandler) CreateInstance(ctx context.Context, dtc *drivers.T
 	}
 
 	// Handle Environment Variables and Metadata
-	metadata := make(map[string]string)
+	metadata := make(map[string]interface{})
 	//cloudapi
 	envvars := make(map[string]string)
 	//docker

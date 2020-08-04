@@ -10,7 +10,7 @@ require (
 	github.com/hashicorp/go-hclog v0.14.1
 	github.com/hashicorp/nomad v0.12.1
 	github.com/hpcloud/tail v1.0.1-0.20180514194441-a1dbeea552b7 // indirect
-	github.com/joyent/triton-go v1.8.4
+	github.com/joyent/triton-go/v2 v2.0.0-pre3
 	github.com/vmihailenco/msgpack v4.0.2+incompatible // indirect
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
 )

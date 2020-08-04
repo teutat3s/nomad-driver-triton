@@ -11,8 +11,8 @@ import (
 	"github.com/hashicorp/nomad/plugins/drivers"
 	"github.com/hashicorp/nomad/plugins/shared/hclspec"
 	pstructs "github.com/hashicorp/nomad/plugins/shared/structs"
-	"github.com/joyent/triton-go/compute"
-	"github.com/joyent/triton-go/network"
+	"github.com/joyent/triton-go/v2/compute"
+	"github.com/joyent/triton-go/v2/network"
 )
 
 const (
