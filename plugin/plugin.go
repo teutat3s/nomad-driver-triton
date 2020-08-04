@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Smithx10/nomad-driver-triton/types"
 	hclog "github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/nomad/plugins/base"
 	"github.com/hashicorp/nomad/plugins/drivers"
@@ -13,6 +12,7 @@ import (
 	pstructs "github.com/hashicorp/nomad/plugins/shared/structs"
 	"github.com/joyent/triton-go/compute"
 	"github.com/joyent/triton-go/network"
+	"github.com/teutat3s/nomad-driver-triton/types"
 )
 
 const (
