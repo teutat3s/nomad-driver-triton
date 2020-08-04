@@ -15,8 +15,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Smithx10/nomad-driver-triton/client"
-	"github.com/Smithx10/nomad-driver-triton/types"
 	docker "github.com/fsouza/go-dockerclient"
 	hclog "github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/nomad/plugins/drivers"
@@ -24,6 +22,8 @@ import (
 	"github.com/joyent/triton-go/v2/authentication"
 	"github.com/joyent/triton-go/v2/compute"
 	"github.com/joyent/triton-go/v2/network"
+	"github.com/teutat3s/nomad-driver-triton/client"
+	"github.com/teutat3s/nomad-driver-triton/types"
 )
 
 type TritonTaskHandler struct {

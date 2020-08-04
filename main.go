@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/Smithx10/nomad-driver-triton/plugin"
 	hclog "github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/nomad/plugins"
+	"github.com/teutat3s/nomad-driver-triton/plugin"
 )
 
 func main() {

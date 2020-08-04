@@ -3,7 +3,6 @@ module github.com/teutat3s/nomad-driver-triton
 go 1.14
 
 require (
-	github.com/Smithx10/nomad-driver-triton v0.0.2
 	github.com/fsouza/go-dockerclient v1.6.5
 	github.com/go-ole/go-ole v1.2.2 // indirect
 	github.com/hashicorp/errwrap v1.0.0
