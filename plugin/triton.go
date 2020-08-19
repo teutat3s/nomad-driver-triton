@@ -611,7 +611,7 @@ func NewTritonTaskHandler(logger hclog.Logger) *TritonTaskHandler {
 		}
 		signer, err = authentication.NewSSHAgentSigner(input)
 		if err != nil {
-			log.Fatalf("Error Creating SSH Agent Signer: {{err}}", err)
+			log.Fatalf("Error Creating SSH Agent Signer: %s", err)
 		}
 	} else {
 		var keyBytes []byte
@@ -645,7 +645,7 @@ func NewTritonTaskHandler(logger hclog.Logger) *TritonTaskHandler {
 		}
 		signer, err = authentication.NewPrivateKeySigner(input)
 		if err != nil {
-			log.Fatalf("Error Creating SSH Private Key Signer: {{err}}", err)
+			log.Fatalf("Error Creating SSH Private Key Signer: %s", err)
 		}
 	}
 
