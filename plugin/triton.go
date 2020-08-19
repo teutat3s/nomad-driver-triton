@@ -212,7 +212,7 @@ func (tth *TritonTaskHandler) CreateInstance(ctx context.Context, dtc *drivers.T
 	}
 
 	// Resources
-	tth.logger.Info(fmt.Sprintf("DEVENV: %s", dtc.Resources))
+	tth.logger.Info(fmt.Sprintf("DEVENV: %v", dtc.Resources))
 
 	// Make Name Reflect the Nomad Spec
 	uniqueName := fmt.Sprintf("%s-%s-%s-%s", dtc.JobName, dtc.TaskGroupName, dtc.Name, dtc.AllocID[:8])
