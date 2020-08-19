@@ -7,6 +7,7 @@ type TaskConfig struct {
 	APIType            string            `codec:"api_type" json:"api_type"`
 	Cloud              CloudAPI          `codec:"cloud_api" json:"cloud_api"`
 	Docker             DockerAPI         `codec:"docker_api" json:"docker_api"`
+	Auth               DockerAuth        `codec:"auth"`
 	Affinity           []string          `codec:"affinity" json:"affinity"`
 	CNS                []string          `codec:"cns" json:"cns"`
 	DeletionProtection bool              `codec:"deletion_protection" json:"deletion_protection"`
@@ -28,6 +29,13 @@ type CloudAPI struct {
 type Network struct {
 	Name string `codec:"name" json:"name"`
 	UUID string `codec:"uuid" json:"uuid"`
+}
+
+type DockerAuth struct {
+	Username   string `codec:"username"`
+	Password   string `codec:"password"`
+	Email      string `codec:"email"`
+	ServerAddr string `codec:"server_address"`
 }
 
 type DockerImage struct {

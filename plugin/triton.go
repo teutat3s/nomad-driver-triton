@@ -259,6 +259,9 @@ func (tth *TritonTaskHandler) CreateInstance(ctx context.Context, dtc *drivers.T
 			tc.Docker.Image.Tag = "latest"
 		}
 
+		auth, err := tth.resolveRegistryAuthentication(tc, tc.Docker.Image.Name)
+		authOpts := *auth
+
 		// See if AutoPull is set
 		if tc.Docker.Image.AutoPull == true {
 			err := tth.dclient.PullImage(
@@ -267,7 +270,7 @@ func (tth *TritonTaskHandler) CreateInstance(ctx context.Context, dtc *drivers.T
 					Tag:        tc.Docker.Image.Tag,
 					Context:    ctx,
 				},
-				docker.AuthConfiguration{},
+				authOpts,
 			)
 			if err != nil {
 				return nil, err
@@ -832,4 +835,15 @@ func (tth *TritonTaskHandler) GetPackage(p types.Package) (*compute.Package, err
 	}
 
 	return pkg[0], nil
+}
+
+// authBackend encapsulates a function that resolves registry credentials.
+type authBackend func(string) (*docker.AuthConfiguration, error)
+
+// resolveRegistryAuthentication attempts to retrieve auth credentials for the
+// repo, trying all authentication-backends possible.
+func (tth *TritonTaskHandler) resolveRegistryAuthentication(tc types.TaskConfig, repo string) (*docker.AuthConfiguration, error) {
+	return firstValidAuth(repo, []authBackend{
+		authFromTaskConfig(tc),
+	})
 }
