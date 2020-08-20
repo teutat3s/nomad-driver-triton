@@ -1,4 +1,4 @@
-module github.com/Smithx10/nomad-driver-triton
+module github.com/teutat3s/nomad-driver-triton
 
 go 1.14
 
