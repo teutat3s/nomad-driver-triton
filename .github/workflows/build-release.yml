@@ -50,13 +50,13 @@ jobs:
         xz $tar
 
     - name: Upload Release Asset
-              id: upload_release_asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ needs.prepare.outputs.upload_url }}
-                  asset_path: ./nomad-driver-triton_alpine.tar.xz
-                  asset_name: nomad-driver-triton_alpine-${{ needs.prepare.outputs.tag }}.tar.xz
-                  asset_content_type: application/x-xz
+      id: upload_release_asset
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ needs.prepare.outputs.upload_url }}
+          asset_path: ./nomad-driver-triton_alpine.tar.xz
+          asset_name: nomad-driver-triton_alpine-${{ needs.prepare.outputs.tag }}.tar.xz
+          asset_content_type: application/x-xz
 
