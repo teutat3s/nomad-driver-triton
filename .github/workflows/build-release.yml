@@ -42,6 +42,7 @@ jobs:
       run: |
         set -xe
         tar=nomad-driver-triton_alpine.tar
+        tag=release:$$
         docker build --tag $tag .
         container=$(docker create $tag)
         docker cp $container:/root/go/bin/nomad-driver-triton - > $tar
