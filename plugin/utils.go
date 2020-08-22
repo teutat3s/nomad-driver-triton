@@ -20,14 +20,14 @@ func firstValidAuth(repo string, backends []authBackend) (*docker.AuthConfigurat
 func authFromTaskConfig(tc types.TaskConfig) authBackend {
 	return func(string) (*docker.AuthConfiguration, error) {
 		// If all auth fields are empty, return
-		if len(tc.Auth.Username) == 0 && len(tc.Auth.Password) == 0 && len(tc.Auth.Email) == 0 && len(tc.Auth.ServerAddr) == 0 {
+		if len(tc.Docker.Auth.Username) == 0 && len(tc.Docker.Auth.Password) == 0 && len(tc.Docker.Auth.Email) == 0 && len(tc.Docker.Auth.ServerAddr) == 0 {
 			return nil, nil
 		}
 		return &docker.AuthConfiguration{
-			Username:      tc.Auth.Username,
-			Password:      tc.Auth.Password,
-			Email:         tc.Auth.Email,
-			ServerAddress: tc.Auth.ServerAddr,
+			Username:      tc.Docker.Auth.Username,
+			Password:      tc.Docker.Auth.Password,
+			Email:         tc.Docker.Auth.Email,
+			ServerAddress: tc.Docker.Auth.ServerAddr,
 		}, nil
 	}
 }
